@@ -52,7 +52,7 @@ def create_rfm_df(df):
       
     return rfm_df
 
-all_df = pd.read_csv("all_data.csv")
+all_df = pd.read_csv("https://raw.githubusercontent.com/seprianto15/submission_analyst_data/refs/heads/master/dashboard/all_data.csv")
 
 datetime_columns = ['order_purchase_timestamp', 'order_approved_at', 'order_delivered_carrier_date',
                     'order_delivered_customer_date', 'order_estimated_delivery_date', 'shipping_limit_date']
@@ -85,7 +85,6 @@ low_order_df = create_low_order_df(main_df)
 on_time_delivery_df = create_on_time_delivery_df(main_df)
 late_delivery_df = create_late_delivery_df(main_df)
 rfm_df = create_rfm_df(main_df)
-
 
 st.header('Warung Kopi Analysis Dashboard :baby:')
 
