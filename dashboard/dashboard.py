@@ -49,10 +49,10 @@ def create_rfm_df(df):
     recent_date = all_df['order_purchase_timestamp'].dt.date.max()
     rfm_df['recency'] = rfm_df['max_order_timestamp'].apply(lambda x: (recent_date - x).days)
     rfm_df.drop('max_order_timestamp', axis=1, inplace=True)
-    
+      
     return rfm_df
 
-all_df = pd.read_csv("https://raw.githubusercontent.com/seprianto15/submission_analyst_data/refs/heads/master/dashboard/all_data.csv")
+all_df = pd.read_csv("all_data.csv")
 
 datetime_columns = ['order_purchase_timestamp', 'order_approved_at', 'order_delivered_carrier_date',
                     'order_delivered_customer_date', 'order_estimated_delivery_date', 'shipping_limit_date']
